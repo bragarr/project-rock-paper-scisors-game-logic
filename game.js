@@ -1,6 +1,7 @@
 const gameMoves = ["rock", "paper", "scissors"];
 let scorePlayer = 0;
 let scoreComputer = 0;
+let rounds = 5;
 let playerWins = false;
 let gameTie = false;
 
@@ -56,6 +57,7 @@ function playRound(playerSelection,computerSelection) {
 }
 
 function game(rounds) {
+    alert(`Welcome! This is a Rock, Paper and Scissors Game! This is a ${rounds} rounds game`);
     for(let i = 0; i < rounds; i++) {
         const playerSelection = prompt("So... Rock, Paper or Scissors??? : ").toLowerCase();
             if(gameMoves.includes(playerSelection) === false) {
@@ -68,8 +70,8 @@ function game(rounds) {
                     scorePlayer += 1;
                     console.log(`Player score: ${scorePlayer} | Computer Score: ${scoreComputer}`);
                 } else if(gameTie) {
-                    scorePlayer += 1;
-                    scoreComputer += 1;
+                    scorePlayer += 0;
+                    scoreComputer += 0;
                     console.log(`Player score: ${scorePlayer} | Computer Score: ${scoreComputer}`);
                 } else {
                     scoreComputer += 1;
@@ -86,4 +88,5 @@ function game(rounds) {
     }
 }
 
-console.log(game(5));
+console.log("Welcome to the game!")
+console.log(game(rounds));
